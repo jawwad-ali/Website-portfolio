@@ -170,6 +170,7 @@
     width: 100%;
     object-fit: contain;
     z-index: 1;
+    border-radius: 15px;
   }
 
   .overlay_circle {
@@ -184,5 +185,5 @@
 
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
-  } 
+  }
 }
