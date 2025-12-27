@@ -1,13 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.scss";
 import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 
-export const navItem = ["home", "about", "work", "skills", "contact"];
+export const navItem = ["home", "about", "work", "services", "skills", "contact"];
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Check localStorage and apply theme on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }, []);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+
+    if (newMode) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    }
+  };
 
   return (
     <nav className="app__navbar">
@@ -23,6 +48,15 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+      {/* Dark mode toggle */}
+      <div className="app__navbar-theme-toggle" onClick={toggleDarkMode}>
+        {darkMode ? (
+          <BsSunFill className="theme-icon" />
+        ) : (
+          <BsMoonStarsFill className="theme-icon" />
+        )}
+      </div>
 
       {/* mobile menu */}
       <div className="app__navbar-menu">
@@ -41,6 +75,21 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
+              <li key="theme-toggle-mobile">
+                <div className="mobile-theme-toggle" onClick={toggleDarkMode}>
+                  {darkMode ? (
+                    <>
+                      <BsSunFill className="theme-icon-mobile" />
+                      <span>Light Mode</span>
+                    </>
+                  ) : (
+                    <>
+                      <BsMoonStarsFill className="theme-icon-mobile" />
+                      <span>Dark Mode</span>
+                    </>
+                  )}
+                </div>
+              </li>
             </ul>
           </motion.div>
         )}

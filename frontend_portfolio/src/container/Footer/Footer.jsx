@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Footer.scss";
+import emailjs from "@emailjs/browser";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
+import { emailConfig } from "../../emailConfig";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -24,18 +26,61 @@ const Footer = () => {
 
   // onSubmit function
   const handleSubmit = () => {
+    // Form validation
+    if (!name || !email || !message) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
     setLoading(true);
-    const contact = {
-      _type: "contact",
-      name: name,
-      email: email,
+
+    // Prepare template parameters
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_email: "connectaj09@gmail.com",
       message: message,
+      message_time: new Date().toLocaleString(),
     };
 
-    client.create(contact).then(() => {
-      setLoading(false);
-      setIsFormSubmitted(true);
-    });
+    // Send email using EmailJS
+    emailjs
+      .send(emailConfig.serviceID, emailConfig.templateID, templateParams, emailConfig.publicKey)
+      .then(
+        (response) => {
+          console.log("Email sent successfully!", response.status, response.text);
+
+          // Also save to Sanity (optional backup)
+          const contact = {
+            _type: "contact",
+            name: name,
+            email: email,
+            message: message,
+          };
+
+          client.create(contact).then(() => {
+            setLoading(false);
+            setIsFormSubmitted(true);
+          }).catch((err) => {
+            console.error("Sanity save error:", err);
+            // Still mark as submitted since email was sent
+            setLoading(false);
+            setIsFormSubmitted(true);
+          });
+        },
+        (error) => {
+          console.error("Email sending failed:", error);
+          setLoading(false);
+          alert("Failed to send message. Please try again or contact directly at connectaj09@gmail.com");
+        }
+      );
   };
 
   return (
@@ -45,8 +90,8 @@ const Footer = () => {
       <div className="app__footer-cards">
         <div className="app__footer-card">
           <img src={images.email} alt="email" />
-          <a href="mailto:alijawwad001@yahoo.com" className="p-text">
-            alijawwad001@yahoo.com
+          <a href="mailto:connectaj09@gmail.com" className="p-text">
+            connectaj09@gmail.com
           </a>
         </div>
       </div>
@@ -87,8 +132,17 @@ const Footer = () => {
           </button>
         </div>
       ) : (
-        <div>
-          <h3>Thank you for getting in touch</h3>
+        <div className="app__footer-success">
+          <h3>Thank you for getting in touch!</h3>
+          <button
+            className="p-text"
+            onClick={() => {
+              setIsFormSubmitted(false);
+              setFormData({ name: "", email: "", message: "" });
+            }}
+          >
+            Send Another Message
+          </button>
         </div>
       )}
     </>

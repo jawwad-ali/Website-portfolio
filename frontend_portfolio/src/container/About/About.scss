@@ -4,35 +4,208 @@
   flex-direction: column;
 }
 
-.app__profiles {
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  flex-wrap: wrap;
-  margin-top: 2rem;
+// Tagline
+.app__about-tagline {
+  text-align: center;
+  max-width: 700px;
+  margin: 1rem auto 0;
+  font-size: 1.125rem;
+  color: var(--gray-color);
+  line-height: 1.6;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+    max-width: 1200px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 }
 
-.app__profile-img {
-  width: 190px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  margin: 2rem;
+// Stats Section
+.app__about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 900px;
+  width: 100%;
 
-  img {
-    width: 100%;
-    height: 170px;
-    border-radius: 15px;
-    object-fit: cover;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+  }
+}
+
+.app__about-stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--primary-color);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--gray-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   @media screen and (min-width: 2000px) {
-    width: 370px;
-    margin: 2rem 4rem;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
 
-    img {
-      height: 370px;
+    .stat-value {
+      font-size: 4rem;
+      margin-bottom: 1rem;
     }
+
+    .stat-label {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 1rem 0.75rem;
+
+    .stat-value {
+      font-size: 1.75rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+// What I Do Cards
+.app__profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  width: 100%;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 500px;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+}
+
+.app__profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--white-color);
+  border-radius: 20px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  @media screen and (min-width: 2000px) {
+    padding: 4rem 3rem;
+    border-radius: 30px;
+  }
+
+  @media screen and (max-width: 450px) {
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+}
+
+.app__profile-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+
+  .app__profile-card:hover & {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+  }
+
+  @media screen and (min-width: 2000px) {
+    width: 140px;
+    height: 140px;
+    font-size: 4.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.app__profile-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--black-color);
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.app__profile-description {
+  line-height: 1.7;
+  color: var(--gray-color);
+  font-size: 1rem;
+
+  @media screen and (min-width: 2000px) {
+    line-height: 2;
+    font-size: 1.875rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 0.9375rem;
+    line-height: 1.6;
   }
 }
