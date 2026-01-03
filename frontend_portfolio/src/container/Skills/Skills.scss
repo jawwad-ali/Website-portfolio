@@ -106,6 +106,12 @@
     color: white;
   }
 
+  .skill-icon-image {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
   &:hover {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
@@ -118,6 +124,11 @@
     .skill-icon-text {
       font-size: 3rem;
     }
+
+    .skill-icon-image {
+      width: 60%;
+      height: 60%;
+    }
   }
 
   @media screen and (max-width: 900px) {
@@ -127,14 +138,21 @@
     .skill-icon-text {
       font-size: 1.5rem;
     }
+
+    .skill-icon-image {
+      width: 60%;
+      height: 60%;
+    }
   }
 }
 
 .app__skills-name {
   font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--black-color);
   margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--gray-color);
+  line-height: 1.7;
 
   @media screen and (min-width: 2000px) {
     font-size: 1.75rem;

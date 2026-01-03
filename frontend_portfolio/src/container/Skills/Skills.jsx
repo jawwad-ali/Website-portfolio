@@ -2,23 +2,25 @@ import React from "react";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { motion } from "framer-motion";
 import "./Skills.scss";
+import images from "../../constants/images";
 
 // Skills data from resume
 const skillsData = [
-  { name: "Next.js", icon: "⚡", bgColor: "#000000" },
-  { name: "React.js", icon: "⚛️", bgColor: "#61DAFB" },
-  { name: "TypeScript", icon: "TS", bgColor: "#3178C6" },
-  { name: "Node.js", icon: "🟢", bgColor: "#339933" },
-  { name: "Python", icon: "🐍", bgColor: "#3776AB" },
-  { name: "FastAPI", icon: "⚡", bgColor: "#009688" },
-  { name: "Tailwind CSS", icon: "🎨", bgColor: "#06B6D4" },
-  { name: "PostgreSQL", icon: "🐘", bgColor: "#4169E1" },
-  { name: "Firebase", icon: "🔥", bgColor: "#FFCA28" },
-  { name: "Redux", icon: "🔄", bgColor: "#764ABC" },
-  { name: "GraphQL", icon: "◈", bgColor: "#E10098" },
-  { name: "REST API", icon: "🔌", bgColor: "#FF6C37" },
-  { name: "Git", icon: "📦", bgColor: "#F05032" },
-  { name: "N8N", icon: "🤖", bgColor: "#EA4B71" },
+  { name: "OpenAI Agents SDK", icon: images.openaiLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Docker", icon: images.dockerLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "N8N", icon: images.n8nLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Next.js", icon: images.nextjs, bgColor: "#FFFFFF", isImage: true },
+  { name: "TypeScript", icon: images.typescriptLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Node.js", icon: images.nodejsLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Python", icon: images.pythonLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "FastAPI", icon: images.fastapi, bgColor: "#FFFFFF", isImage: true },
+  { name: "Tailwind CSS", icon: images.tailwindcssLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "PostgreSQL", icon: images.postgresqlLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Firebase", icon: images.firebaseLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Redux", icon: images.reduxLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "GraphQL", icon: images.graphqlLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "REST API", icon: images.restapiLogo, bgColor: "#FFFFFF", isImage: true },
+  { name: "Git", icon: images.gitLogo, bgColor: "#FFFFFF", isImage: true },
 ];
 
 // Experience data from resume
@@ -82,11 +84,18 @@ const Skills = () => {
               >
                 <div
                   className="app__flex app__skills-icon"
-                  style={{ backgroundColor: skill.bgColor }}
+                  style={{
+                    backgroundColor: skill.bgColor,
+                    border: skill.bgColor === "#FFFFFF" ? "2px solid #e0e0e0" : "none"
+                  }}
                 >
-                  <span className="skill-icon-text">{skill.icon}</span>
+                  {skill.isImage ? (
+                    <img src={skill.icon} alt={skill.name} className="skill-icon-image" />
+                  ) : (
+                    <span className="skill-icon-text">{skill.icon}</span>
+                  )}
                 </div>
-                <p className="p-text app__skills-name">{skill.name}</p>
+                <p className="app__skills-name">{skill.name}</p>
               </motion.div>
             ))}
           </div>

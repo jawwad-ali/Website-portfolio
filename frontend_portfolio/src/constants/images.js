@@ -17,6 +17,23 @@ import redux from "../assets/redux.png";
 import sass from "../assets/sass.png";
 import typescript from "../assets/typescript.png";
 import vue from "../assets/vue.png";
+import fastapi from "../assets/fastapi.svg";
+import nextjs from "../assets/nextjs.svg";
+import reactjs from "../assets/reactjs.svg";
+import typescriptLogo from "../assets/typescript-logo.svg";
+import nodejsLogo from "../assets/nodejs-logo.svg";
+import pythonLogo from "../assets/python-logo.svg";
+import tailwindcssLogo from "../assets/tailwindcss-logo.svg";
+import postgresqlLogo from "../assets/postgresql-logo.svg";
+import firebaseLogo from "../assets/firebase-logo.svg";
+import reduxLogo from "../assets/redux-logo.svg";
+import graphqlLogo from "../assets/graphql-logo.svg";
+import gitLogo from "../assets/git-logo.svg";
+import n8nLogo from "../assets/n8n-logo.svg";
+import restapiLogo from "../assets/restapi-logo.svg";
+import openaiLogo from "../assets/openai-logo.svg";
+import dockerLogo from "../assets/docker-logo.svg";
+import sassLogo from "../assets/sass-logo.svg";
 
 import about01 from "../assets/about01.png";
 import about02 from "../assets/about02.png";
@@ -36,8 +53,10 @@ import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 import profilePicture from "../assets/profilePicture.jpg";
 import profilePicture01 from "../assets/profilePicture01.jpg"
- 
+import modifyDP from "../assets/modify-dp.png";
+
 export default {
+  modifyDP,
   profilePicture01,
   profilePicture,
   email,
@@ -59,6 +78,23 @@ export default {
   sass,
   typescript,
   vue,
+  fastapi,
+  nextjs,
+  reactjs,
+  typescriptLogo,
+  nodejsLogo,
+  pythonLogo,
+  tailwindcssLogo,
+  postgresqlLogo,
+  firebaseLogo,
+  reduxLogo,
+  graphqlLogo,
+  gitLogo,
+  n8nLogo,
+  restapiLogo,
+  openaiLogo,
+  dockerLogo,
+  sassLogo,
   about01,
   about02,
   about03,

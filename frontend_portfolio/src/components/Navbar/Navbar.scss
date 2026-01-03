@@ -24,13 +24,48 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(77, 91, 206, 0.1), rgba(49, 59, 172, 0.15));
+  border: 2px solid rgba(77, 91, 206, 0.2);
+  box-shadow: 0 4px 12px rgba(77, 91, 206, 0.15);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(77, 91, 206, 0.25);
+    border-color: rgba(77, 91, 206, 0.4);
+  }
+
+  [data-theme="dark"] & {
+    background: rgba(77, 91, 206, 0.1);
+    border: 2px solid rgba(77, 91, 206, 0.3);
+    box-shadow: 0 4px 12px rgba(77, 91, 206, 0.2);
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(77, 91, 206, 0.35);
+      border-color: rgba(77, 91, 206, 0.5);
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
   img {
-    width: 150px;
-    height: 35px;
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
 
     @media screen and (min-width: 2000px) {
-      width: 180px;
+      height: 60px;
+    }
+
+    @media screen and (max-width: 600px) {
       height: 40px;
     }
   }

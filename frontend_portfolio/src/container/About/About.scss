@@ -158,9 +158,22 @@
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
 
+  svg {
+    width: 40px;
+    height: 40px;
+    color: var(--secondary-color);
+    stroke-width: 2;
+    transition: all 0.3s ease;
+  }
+
   .app__profile-card:hover & {
     transform: scale(1.1);
     background: var(--secondary-color);
+
+    svg {
+      color: var(--white-color);
+      transform: rotate(5deg);
+    }
   }
 
   @media screen and (min-width: 2000px) {
@@ -168,6 +181,11 @@
     height: 140px;
     font-size: 4.5rem;
     margin-bottom: 2.5rem;
+
+    svg {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   @media screen and (max-width: 450px) {
@@ -175,6 +193,11 @@
     height: 65px;
     font-size: 2rem;
     margin-bottom: 1rem;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
   }
 }
 

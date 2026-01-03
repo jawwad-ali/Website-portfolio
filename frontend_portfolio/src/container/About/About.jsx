@@ -2,6 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./About.scss";
 import { AppWrap, MotionWrap } from "../../wrapper";
+import { ReactComponent as FullStackIcon } from "../../assets/fullstack-icon.svg";
+import { ReactComponent as AIAutomationIcon } from "../../assets/ai-automation-icon.svg";
+import { ReactComponent as CMSIcon } from "../../assets/cms-icon.svg";
+import { ReactComponent as TeachingIcon } from "../../assets/teaching-icon.svg";
 
 // What I Do cards data
 const aboutData = [
@@ -9,25 +13,25 @@ const aboutData = [
     title: "Full Stack Development",
     description:
       "Building scalable web applications with Next.js, React, TypeScript, and Node.js. Specialized in modern frameworks and best practices.",
-    icon: "💻",
+    icon: <FullStackIcon />,
   },
   {
     title: "AI & Automation",
     description:
       "Creating intelligent automation workflows using N8N, Python, and FastAPI. Developing Cloud-Native AI Agents for business optimization.",
-    icon: "🤖",
+    icon: <AIAutomationIcon />,
   },
   {
     title: "Headless CMS Expert",
     description:
       "Implementing modern content management with Sanity.io, managing structured databases, and building seamless content delivery systems.",
-    icon: "📝",
+    icon: <CMSIcon />,
   },
   {
     title: "Teaching & Mentorship",
     description:
       "Lead Teacher at Governor House Sindh IT Program, guiding 1500+ students in modern web development and programming.",
-    icon: "👨‍🏫",
+    icon: <TeachingIcon />,
   },
 ];
 
