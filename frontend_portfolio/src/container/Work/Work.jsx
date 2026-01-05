@@ -48,7 +48,7 @@ const Work = () => {
 
       {/* button section */}
       <div className="app__work-filter">
-        {["Web App", "Design to Code", "All"].map((item, index) => (
+        {["Web App", "AI", "All"].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -92,7 +92,7 @@ const Work = () => {
                   </motion.div>
                 </a>
 
-                <a href={work.projectLink} target="_blank">
+                <a href={work.codeLink} target="_blank">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}

@@ -1,0 +1,134 @@
+{
+  "works": [
+    {
+      "title": "Finance Manager",
+      "description": "A comprehensive personal finance management application that helps users track expenses, manage budgets, and visualize their spending patterns. Built with modern web technologies to provide a seamless and intuitive user experience for better financial control.",
+      "projectLink": "https://spend-genius.vercel.app/",
+      "codeLink": "https://github.com/jawwad-ali/finance-manager",
+      "imgUrl": "../frontend_portfolio/src/assets/finance_manager.jpg",
+      "tags": ["NextJS", "TypeScript", "Drizzle ORM", "Neon Database"]
+    },
+    {
+      "title": "E-commerce Platform",
+      "description": "A full-stack e-commerce platform with payment integration and admin dashboard",
+      "projectLink": "https://example.com/ecommerce",
+      "codeLink": "https://github.com/username/ecommerce",
+      "imgUrl": "https://via.placeholder.com/800x600",
+      "tags": ["React", "Node.js", "MongoDB", "Stripe"]
+    },
+    {
+      "title": "Weather App",
+      "description": "Real-time weather application with geolocation support",
+      "projectLink": "https://example.com/weather",
+      "codeLink": "https://github.com/username/weather-app",
+      "imgUrl": "https://via.placeholder.com/800x600",
+      "tags": ["JavaScript", "API", "CSS"]
+    }
+  ],
+  "abouts": [
+    {
+      "title": "Web Development",
+      "description": "I create responsive and user-friendly web applications using modern technologies",
+      "imgUrl": "https://via.placeholder.com/400x400"
+    },
+    {
+      "title": "UI/UX Design",
+      "description": "I design intuitive interfaces that provide excellent user experiences",
+      "imgUrl": "https://via.placeholder.com/400x400"
+    },
+    {
+      "title": "Backend Development",
+      "description": "I build robust and scalable server-side applications",
+      "imgUrl": "https://via.placeholder.com/400x400"
+    }
+  ],
+  "skills": [
+    {
+      "name": "React",
+      "bgColor": "#61DAFB",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+      "name": "JavaScript",
+      "bgColor": "#F7DF1E",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    {
+      "name": "Node.js",
+      "bgColor": "#339933",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+    },
+    {
+      "name": "MongoDB",
+      "bgColor": "#47A248",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    }
+  ],
+  "experiences": [
+    {
+      "year": "2023",
+      "works": [
+        {
+          "name": "Full Stack Developer",
+          "company": "Tech Company Inc",
+          "desc": "Developed and maintained multiple web applications using React and Node.js"
+        },
+        {
+          "name": "Frontend Developer",
+          "company": "Digital Agency",
+          "desc": "Created responsive user interfaces and improved website performance"
+        }
+      ]
+    },
+    {
+      "year": "2022",
+      "works": [
+        {
+          "name": "Junior Developer",
+          "company": "Startup XYZ",
+          "desc": "Assisted in building features for the main product and fixed bugs"
+        }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "company": "ABC Corporation",
+      "imgurl": "https://via.placeholder.com/150x150",
+      "feedback": "Excellent work! Delivered the project on time and exceeded expectations."
+    },
+    {
+      "name": "Jane Smith",
+      "company": "XYZ Industries",
+      "imgurl": "https://via.placeholder.com/150x150",
+      "feedback": "Very professional and skilled developer. Would definitely work with again."
+    }
+  ],
+  "brands": [
+    {
+      "name": "Google",
+      "imgUrl": "https://via.placeholder.com/200x100"
+    },
+    {
+      "name": "Microsoft",
+      "imgUrl": "https://via.placeholder.com/200x100"
+    },
+    {
+      "name": "Amazon",
+      "imgUrl": "https://via.placeholder.com/200x100"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "message": "I would like to discuss a potential project collaboration."
+    },
+    {
+      "name": "Bob Williams",
+      "email": "bob@example.com",
+      "message": "Interested in hiring you for a freelance project."
+    }
+  ]
+}

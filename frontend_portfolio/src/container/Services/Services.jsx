@@ -10,7 +10,7 @@ const servicesData = [
     description: "Automate repetitive business tasks using N8N and Python. Save 20+ hours per week on data entry, email workflows, and report generation.",
     techStack: ["N8N", "Python", "FastAPI", "OpenAI"],
     price: "From $1,500",
-    calendlyLink: "https://calendly.com" // Update with your actual Calendly link
+    calendlyLink: "https://calendly.com/connectaj09/30min" // Update with your actual Calendly link
   },
   {
     icon: "🚀",
@@ -18,7 +18,7 @@ const servicesData = [
     description: "Launch your startup idea in 2-4 weeks. Full-stack web applications with authentication, payments, CMS, and modern UI.",
     techStack: ["Next.js", "TypeScript", "Sanity", "Stripe"],
     price: "From $3,000",
-    calendlyLink: "https://calendly.com"
+    calendlyLink: "https://calendly.com/connectaj09/30min"
   },
   {
     icon: "🎨",
@@ -26,7 +26,7 @@ const servicesData = [
     description: "Pixel-perfect conversion of your designs into production-ready React/Next.js code. Clean, maintainable, and responsive.",
     techStack: ["React", "Next.js", "Tailwind", "TypeScript"],
     price: "From $800",
-    calendlyLink: "https://calendly.com"
+    calendlyLink: "https://calendly.com/connectaj09/30min"
   }
 ];
 
@@ -95,7 +95,7 @@ const Services = () => {
           Let's discuss how I can help bring your idea to life
         </p>
         <a
-          href="https://calendly.com"
+          href="https://calendly.com/connectaj09/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="app__services-cta-button"

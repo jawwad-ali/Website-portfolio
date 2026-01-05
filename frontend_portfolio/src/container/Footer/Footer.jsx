@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Footer.scss";
 import emailjs from "@emailjs/browser";
+import { MdEmail } from "react-icons/md";
+import { FaCalendarCheck } from "react-icons/fa";
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -89,9 +91,15 @@ const Footer = () => {
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
-          <img src={images.email} alt="email" />
+          <MdEmail className="app__footer-card-icon" />
           <a href="mailto:connectaj09@gmail.com" className="p-text">
             connectaj09@gmail.com
+          </a>
+        </div>
+        <div className="app__footer-card">
+          <FaCalendarCheck className="app__footer-card-icon" />
+          <a href="https://calendly.com/connectaj09/30min" target="_blank" rel="noopener noreferrer" className="p-text">
+            Book a Coffee Chat
           </a>
         </div>
       </div>
