@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.swiper-wrapper {
+  max-width: 800px;
+}
+
 // button section
 .app__work-filter {
   display: flex;
@@ -46,12 +50,30 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  overflow: hidden;
+
+  .work-swiper {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 0 4rem;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      box-sizing: border-box;
+    }
+  }
 
   .app__work-item {
-    width: 270px;
+    width: 100%;
     flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
 
-    margin: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
     background: var(--white-color);
@@ -64,14 +86,50 @@
     }
 
     @media screen and (min-width: 2000px) {
-      width: 470px;
       padding: 1.25rem;
-      border: 0.75rem;
     }
 
-    @media screen and (max-width: 300px) {
-      width: 100%;
-      margin: 1rem;
+    @media screen and (max-width: 768px) {
+      padding: 0.8rem;
+    }
+  }
+}
+
+// Swiper navigation and pagination styling
+.work-swiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    &::after {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    &:hover {
+      background: var(--secondary-color);
+      color: var(--white-color);
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: var(--secondary-color);
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+
+    &-active {
+      opacity: 1;
+      background: var(--secondary-color);
     }
   }
 }
